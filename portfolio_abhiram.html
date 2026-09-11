@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #FAFAFC;
+    color: #222;
+    min-height: 100vh;
+  }
+  .appbar {
+    background: #4750AC;
+    color: #fff;
+    padding: 22px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  .appbar h1 { font-size: 26px; font-weight: 700; }
+  .back-btn {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+  }
+  .back-btn:hover { opacity: 0.8; }
+  .page { display: none; min-height: calc(100vh - 74px); }
+  .page.active { display: block; }
+  #home .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 90px 20px 40px;
+  }
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #E6DFFB;
+    margin-bottom: 28px;
+  }
+  #home h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #3B3F9C;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  #home .subtitle { font-size: 16px; color: #666; margin-bottom: 36px; }
+  .btn {
+    display: block;
+    width: 180px;
+    padding: 14px 0;
+    margin: 0 auto 16px;
+    background: #4750AC;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(71,80,172,0.35);
+    transition: background 0.15s ease;
+  }
+  .btn:hover { background: #3c449a; }
+  #about .content { max-width: 760px; margin: 60px auto; padding: 0 24px; }
+  .about-card {
+    background: #E9E8F8;
+    border-radius: 20px;
+    padding: 36px 30px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  }
+  .person-icon { width: 56px; height: 56px; margin: 0 auto 20px; fill: #4750AC; }
+  .about-card p.bio { font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 30px; }
+  .skills-heading {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+    color: #3B3F9C;
+    margin-bottom: 14px;
+  }
+  .skills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .skill-chip {
+    background: #4750AC;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  #projects .content { max-width: 760px; margin: 50px auto; padding: 0 24px; }
+  .project-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  }
+  .project-card h3 { font-size: 20px; color: #3B3F9C; margin-bottom: 8px; }
+  .project-card p { font-size: 15px; color: #444; line-height: 1.5; }
+  .projects-back { text-align: center; margin-top: 10px; }
+  @media (max-width: 480px) {
+    .avatar { width: 120px; height: 120px; }
+    #home h2 { font-size: 24px; }
+    .appbar h1 { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <div id="home" class="page active">
+    <div class="appbar"><h1>My Portfolio</h1></div>
+    <div class="content">
+      <div class="avatar"></div>
+      <h2>P. ABHIRAM</h2>
+      <p class="subtitle">B.Tech 3rd Year &bull; Computer Science</p>
+      <button class="btn" onclick="showPage('about')">About Me</button>
+      <button class="btn" onclick="showPage('projects')">Projects</button>
+    </div>
+  </div>
+
+  <div id="about" class="page">
+    <div class="appbar">
+      <button class="back-btn" onclick="showPage('home')">&#8592;</button>
+      <h1>About Me</h1>
+    </div>
+    <div class="content">
+      <div class="about-card">
+        <svg class="person-icon" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/></svg>
+        <p class="bio">
+          Hello! I'm P. Abhiram, a passionate Computer Science Engineering student from CR Rao AIMSCS.
+          I love exploring modern technologies and building creative digital projects that solve real-world problems.
+        </p>
+        <div class="skills-heading">Skills &amp; Areas of Expertise</div>
+        <div class="skills-wrap">
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">Java</span>
+          <span class="skill-chip">C</span>
+          <span class="skill-chip">DBMS</span>
+          <span class="skill-chip">Operating Systems</span>
+          <span class="skill-chip">Computer Networks</span>
+          <span class="skill-chip">Machine Learning</span>
+          <span class="skill-chip">DSA</span>
+        </div>
+        <button class="btn" onclick="showPage('home')">Back to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="projects" class="page">
+    <div class="appbar">
+      <button class="back-btn" onclick="showPage('home')">&#8592;</button>
+      <h1>My Projects</h1>
+    </div>
+    <div class="content">
+      <div class="project-card">
+        <h3>Content Moderation System</h3>
+        <p>A Python-based intelligent tool for video content filtering and analysis.</p>
+      </div>
+      <div class="project-card">
+        <h3>Weather Forecast App</h3>
+        <p>A dynamic app built using Node.js and Java to display real-time weather data.</p>
+      </div>
+      <div class="projects-back">
+        <button class="btn" onclick="showPage('home')">Back to Home</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+</script>
+</body>
+</html>
